@@ -34,41 +34,30 @@ while (i < userCharacterAmount ) {
     var randomLowerCaseLetter = String.fromCharCode(lowerCaseCode);
     passwordArray.push(randomLowerCaseLetter);
     i++;
-  
   }
+
   else if (categoryInt === 1) {
     var upperCaseCode = Math.floor(Math.random() * (90 - 65 + 1)) + 65;
     var randomUpperCaseLetter = String.fromCharCode(upperCaseCode);
     passwordArray.push(randomUpperCaseLetter);
     i++;
- 
   }
+
   else if (categoryInt === 2) {
     var number = Math.floor(Math.random() * 9);
     passwordArray.push(number);
     i++;
-  
   }
+
   else if (categoryInt === 3) {
     var symbol = Math.floor(Math.random() * (41 - 33 + 1)) + 33;
     var randomSymbolCode = String.fromCharCode(symbol);
     passwordArray.push(randomSymbolCode);
     i++;
-    
   }
-
-
 }
-
-console.log(passwordArray.length)
 return passwordArray.join('');
-
 }
-console.log(userCharacterAmount)
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
