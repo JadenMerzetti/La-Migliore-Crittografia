@@ -3,22 +3,29 @@ var generateBtn = document.querySelector("#generate");
 
 let userCharacterAmount 
 
+
 while (true) {
   userCharacterAmount = window.prompt("How many characters would you like your password to be?");
   const CharacterAmount = parseInt(userCharacterAmount);
   
-  if (CharacterAmount >= 8 && CharacterAmount <= 128 ) {
-      break;
+  const userSpecialCharactersAlert = window.confirm("Please agree to use special characters in your password!");
+  const userNumbersAlert = window.confirm("Please agree to include numbers in your password!");
+  const userLowerCaseAlert = window.confirm("Please agree to lowercase letters in your password!");
+  const userUpperCaseAlert = window.confirm("Please agree to uppercase letters in your password!");
 
+  if (
+    CharacterAmount >= 8 &&
+    CharacterAmount <= 128 &&
+    userSpecialCharactersAlert &&
+    userNumbersAlert &&
+    userLowerCaseAlert &&
+    userUpperCaseAlert
+  ) {
+    break;
   }
-    window.alert("The length of your password must be between 8 and 129. Please enter a valid length!");
-  
-}
 
-const userSpecialCharactersAlert = window.confirm("Please agree to use special characters in your password!");
-const userNumbersAlert           = window.confirm("Please agree to include numbers in your password!");
-const userLowerCaseAlert         = window.confirm("Please agree to lower-case letters in your password!");
-const userUpperCaseAlert         = window.confirm("Please agree to upper-case letters in your password!");
+  window.alert("Please enter a valid password length (8-128) and agree to the password criteria!");
+}
 
 let passwordArray;
 function generatePassword () {
