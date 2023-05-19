@@ -22,6 +22,41 @@ const userLowerCaseAlert         = window.confirm("Please agree to lower-case le
 const userUpperCaseAlert         = window.confirm("Please agree to upper-case letters in your password!");
 
 
+function generatePassword () {
+
+passwordArray = [];
+var i  = 0;
+
+while (i < userCharacterAmount) {
+  const categoryInt = Math.floor(Math.random() * 4);
+
+  if (categoryInt === 0) {
+    var lowerCaseCode = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+    var randomLowerCaseLetter = String.fromCharCode(lowerCaseCode);
+    passwordArray.push(randomLowerCaseLetter);
+  }
+  else if (categoryInt === 1) {
+    var upperCaseCode = Math.floor(Math.random() * (90 - 65 + 1)) + 65;
+    var randomUpperCaseLetter = String.fromCharCode(upperCaseCode);
+    passwordArray.push(randomUpperCaseLetter);
+  }
+  else if (categoryInt === 2) {
+    var number = Math.floor(Math.random() * 10);
+    passwordArray.push(number);
+  }
+  else (categoryInt === 3); {
+    var symbol = Math.floor(Math.random() * (41 - 33 + 1)) + 33;
+    var randomSymbolCode = String.fromCharCode(symbol);
+    passwordArray.push(randomSymbolCode);
+  }
+
+  i++;
+}
+
+return passwordArray.join('');
+
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
