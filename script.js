@@ -7,7 +7,7 @@ while (true) {
   userCharacterAmount = window.prompt("How many characters would you like your password to be?");
   const CharacterAmount = parseInt(userCharacterAmount);
   
-  if (CharacterAmount >= 8 && CharacterAmount <= 129 ) {
+  if (CharacterAmount >= 8 && CharacterAmount <= 128 ) {
       break;
 
   }
